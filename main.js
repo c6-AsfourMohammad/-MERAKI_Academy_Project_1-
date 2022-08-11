@@ -23,6 +23,9 @@ let index=0;
 
 const Quiz_1=()=>{
    
+    if(index>4){
+        return reuslt.innerText="reuslt"
+        }
   
    // Qustion.innerText=""  
 
@@ -33,9 +36,7 @@ const Quiz_1=()=>{
       
        p_1.innerText=Quiz[index].Q
     //  p_1.innerText=elem.Q
-    if(index<5){
-     reuslt.innerText="reuslt"
-    }
+    
     // })
     
 }
@@ -53,12 +54,13 @@ body.append(next)
 
 
 next.addEventListener("click",()=>{
-
+    
     const p_1=document.querySelector("p")
     p_1.innerText=""
        //Qustion.append(p_1)
-       index++
-    
-   
+       index++;
+      
+      
     Quiz_1()
+    
 })
