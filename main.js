@@ -1,6 +1,9 @@
 //creat to array...
-const Quiz=[{Q1:"Which of the following shapes is a horse?"}]
-const Quiz2=[{Q2:"Which of the following shapes is a bird?"}]
+const Quiz=[{Q:"Which of the following shapes is a horse?"},
+{Q:"Which of the following shapes is a bird?"},
+{Q:"What is the largest animal on land and sea?"},
+{Q:"What is the smartest animal?"},
+{Q:"What is the dumb animal that does not hear a sound?"}]
 
 //querySelector("body") 
 const body=document.querySelector("body")
@@ -13,32 +16,49 @@ body.append(Answer)
 //creat (div)for choise
 const Choise=document.createElement("div")
 body.append(Choise)
+const reuslt=document.createElement("div")
+body.append(reuslt)
 //useing function 
+let index=0;
+
 const Quiz_1=()=>{
-    Qustion.innerText=""  
-
-    Quiz.forEach((elem,i)=>{
    
-      const p_1=document.createElement("p")
-      Qustion.append(p_1)
-     p_1.innerText=elem.Q1
+  
+   // Qustion.innerText=""  
 
-    })
+    // Quiz.forEach((elem,i)=>{
    
+       const p_1=document.createElement("p")
+       Qustion.append(p_1)
+      
+       p_1.innerText=Quiz[index].Q
+    //  p_1.innerText=elem.Q
+    if(index<5){
+     reuslt.innerText="reuslt"
+    }
+    // })
+    
 }
+// const Quiz_2=()=>{
+//     Quiz.forEach((elem,i)=>{
+        
+//         p_1.innerText=Object.values(elem.Q2).join("")
+//     })
+// }
 console.log(Quiz_1());
  const next=document.createElement("button")
 body.append(next)
  next.innerText="next"
 
- const Quiz_2=()=>{
-     Quiz2.forEach((elem,i)=>{ 
-    
-        const p_1=document.createElement("p")
-      Qustion.append(p_1)
-     p_1.innerText=elem.Q2
-      
-     })
- }
 
-next.addEventListener("click",Quiz_2)
+
+next.addEventListener("click",()=>{
+
+    const p_1=document.querySelector("p")
+    p_1.innerText=""
+       //Qustion.append(p_1)
+       index++
+    
+   
+    Quiz_1()
+})
