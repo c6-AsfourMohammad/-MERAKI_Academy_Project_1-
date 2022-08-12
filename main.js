@@ -43,8 +43,8 @@ Coreact.className="Coreact"
 //creat div for reuslt
 const reuslt=document.createElement("div")
 body.append(reuslt)
-reuslt.className="reuslt:"
- const res_butt=document.createElement("button")
+reuslt.className="reuslt"
+ const res_butt=document.createElement("p")
  reuslt.append(res_butt)
 
 const res=document.createElement("h2")
@@ -53,12 +53,15 @@ reuslt.append(res)
 const p_Q=document.createElement("p")
 Qustion.append(p_Q)
 
+const svg= document.createElementNS("http://www.w3.org/2000/svg", 'path');
+
 let index=0;
  //index =0 global value
 //useing function 
 const Quiz_1=()=>{
 if(index>4){ //fun index>4  return reuslt 
-return  res.innerText="result",res_butt.innerText=result_1.length ;
+    res.innerText=  "Result:"+result_1.length 
+  Qustion.append(res)
 }
 
 const p_Q=document.querySelector("p")
@@ -90,6 +93,25 @@ ans.style.backgroundColor="red"; //use background color green if worng
 })
 })
 }
+ //creat button back
+
+ const back=document.createElement("button")
+ body.append(back)
+back.innerText="back"
+ back.className="back"
+ back.style.boxShadow= "0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19)";
+ //use addEventListener function back button
+
+ back.addEventListener("click",()=>{
+    
+    const p_Q=document.querySelector("p")
+    const ans=document.querySelector("button")
+    p_Q.innerText=""
+    Answer.innerText=""
+       index--;
+       Quiz_1()
+    
+ })
 console.log(Quiz_1());
 //creat button next 
 const next=document.createElement("button")
@@ -106,22 +128,4 @@ next.addEventListener("click",()=>{
        index++;
        Quiz_1()
 });
- //creat button back
 
-const back=document.createElement("button")
- body.append(back)
- back.innerText="Back"
- back.className="back"
- back.style.boxShadow= "0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19)";
- //use addEventListener function back button
-
- back.addEventListener("click",()=>{
-    
-    const p_Q=document.querySelector("p")
-    const ans=document.querySelector("button")
-    p_Q.innerText=""
-    Answer.innerText=""
-       index--;
-       Quiz_1()
-    
- })
