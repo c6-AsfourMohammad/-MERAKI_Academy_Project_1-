@@ -43,9 +43,11 @@ Coreact.className="Coreact"
 //creat div for reuslt
 const reuslt=document.createElement("div")
 body.append(reuslt)
-reuslt.className="reuslt"
+reuslt.className="reuslt:"
+ const res_butt=document.createElement("button")
+ reuslt.append(res_butt)
 
-const res=document.createElement("p")
+const res=document.createElement("h2")
 reuslt.append(res)
 
 const p_Q=document.createElement("p")
@@ -56,7 +58,7 @@ let index=0;
 //useing function 
 const Quiz_1=()=>{
 if(index>4){ //fun index>4  return reuslt 
-return reuslt.innerText=result_1.length , res.innerText="result" ;
+return  res.innerText="result",res_butt.innerText=result_1.length ;
 }
 
 const p_Q=document.querySelector("p")
@@ -67,9 +69,11 @@ p_Q.innerText=Quiz[index].Q
 //creat button in div
  const ans=document.createElement("button")
  Answer.append(ans)
+ ans.className="ans"
 //creat img in button 
 const img=document.createElement("img")
 ans.append(img)
+ans.className="imgbutton"
 //to link the picture use src
 img.src=elem
 img.innerText=elem
@@ -107,6 +111,7 @@ next.addEventListener("click",()=>{
 const back=document.createElement("button")
  body.append(back)
  back.innerText="Back"
+ back.className="back"
  back.style.boxShadow= "0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19)";
  //use addEventListener function back button
 
