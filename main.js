@@ -30,15 +30,21 @@ const body=document.querySelector("body")
 //creat (div)for Qustion 
 const Qustion=document.createElement("div")
 body.append(Qustion)
+Qustion.className="Qustion"
 //creat (div)for Answer 
 const Answer=document.createElement("div")
 body.append(Answer)
+Answer.className="Answer"
 //creat (div)for choise
 const Coreact=document.createElement("div")
 body.append(Coreact)
+Coreact.className="Coreact"
+
 //creat div for reuslt
 const reuslt=document.createElement("div")
 body.append(reuslt)
+reuslt.className="reuslt"
+
 const res=document.createElement("p")
 reuslt.append(res)
 
@@ -85,7 +91,8 @@ console.log(Quiz_1());
 const next=document.createElement("button")
 body.append(next)
  next.innerText="Next"
- 
+ next.style.boxShadow= "0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19)";
+ next.className="next"
  //use addEventListener function next button
 next.addEventListener("click",()=>{
     const p_Q=document.querySelector("p")
@@ -100,15 +107,16 @@ next.addEventListener("click",()=>{
 const back=document.createElement("button")
  body.append(back)
  back.innerText="Back"
+ back.style.boxShadow= "0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19)";
  //use addEventListener function back button
 
  back.addEventListener("click",()=>{
-    if(index<=1){
+    
     const p_Q=document.querySelector("p")
     const ans=document.querySelector("button")
     p_Q.innerText=""
     Answer.innerText=""
        index--;
        Quiz_1()
-    }
+    
  })
