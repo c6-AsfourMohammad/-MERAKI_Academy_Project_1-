@@ -1,6 +1,9 @@
 //creat to array...
 const Quiz=[{Q:"Which of the following shapes is a horse?",
-answer:["a","b","c"]},
+answer:["https://img.freepik.com/premium-vector/illustration-cute-giraffe-avatar_79416-108.jpg",
+"https://img.freepik.com/premium-vector/illustration-cute-cow-avatar_79416-102.jpg",
+"https://png.pngtree.com/png-vector/20191018/ourlarge/pngtree-cute-horse-avatar-with-a-yellow-background-png-image_1770352.jpg"],
+Cor:"https://png.pngtree.com/png-vector/20191018/ourlarge/pngtree-cute-horse-avatar-with-a-yellow-background-png-image_1770352.jpg"},
 {Q:"Which of the following shapes is a bird?",
 answer:["c","b","a"]},
 {Q:"What is the largest animal on land and sea?",
@@ -19,8 +22,8 @@ body.append(Qustion)
 const Answer=document.createElement("div")
 body.append(Answer)
 //creat (div)for choise
-const Choise=document.createElement("div")
-body.append(Choise)
+const Coreact=document.createElement("div")
+body.append(Coreact)
 //creat div for reuslt
 const reuslt=document.createElement("div")
 body.append(reuslt)
@@ -40,12 +43,25 @@ const Quiz_1=()=>{
         const p_Q=document.querySelector("p")
       
        p_Q.innerText=Quiz[index].Q  
+//useing function answer
 
        Quiz[index].answer.forEach((elem,i)=>{
         const ans=document.createElement("button")
         Answer.append(ans)
+        const img=document.createElement("img")
+        ans.append(img)
+        img.src=elem
 
-        ans.innerText=elem
+        img.innerText=elem
+        img.addEventListener("click",()=>{
+            if(Quiz[index].answer[i]===Quiz[index].Cor){
+               ans.style.backgroundColor="green";
+            }else{
+                ans.style.backgroundColor="red";
+            }
+            
+           
+        })
 
     })
         
@@ -60,7 +76,7 @@ next.addEventListener("click",()=>{
     const p_Q=document.querySelector("p")
     const ans=document.querySelector("button")
     p_Q.innerText=""
-    ans.innerText=""
+    Answer.innerText=""
 
        //Qustion.append(p_1)
        
@@ -70,7 +86,6 @@ next.addEventListener("click",()=>{
        Quiz_1()
 });
 
-//useing function answer
 // const answer_1=()=>{
 //     //use forech 
   
@@ -80,4 +95,3 @@ next.addEventListener("click",()=>{
     
 // }
 //console.log(answer_1());
-
