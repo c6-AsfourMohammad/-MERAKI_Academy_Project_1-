@@ -1,9 +1,14 @@
 //creat to array...
-const Quiz=[{Q:"Which of the following shapes is a horse?"},
-{Q:"Which of the following shapes is a bird?"},
-{Q:"What is the largest animal on land and sea?"},
-{Q:"What is the smartest animal?"},
-{Q:"What is the dumb animal that does not hear a sound?"}]
+const Quiz=[{Q:"Which of the following shapes is a horse?",
+answer:["a","b","c"]},
+{Q:"Which of the following shapes is a bird?",
+answer:["c","b","a"]},
+{Q:"What is the largest animal on land and sea?",
+answer:["1","2","3"]},
+{Q:"What is the smartest animal?",
+answer:["a","b","c"]},
+{Q:"What is the dumb animal that does not hear a sound?",
+answer:["a","b","c"]}]
 
 //querySelector("body") 
 const body=document.querySelector("body")
@@ -16,51 +21,63 @@ body.append(Answer)
 //creat (div)for choise
 const Choise=document.createElement("div")
 body.append(Choise)
+//creat div for reuslt
 const reuslt=document.createElement("div")
 body.append(reuslt)
-//useing function 
+ const p_Q=document.createElement("p")
+ Qustion.append(p_Q)
+//  
+ 
 let index=0;
-
+ //index =0 global value
+//useing function 
 const Quiz_1=()=>{
    
-    if(index>4){
-        return reuslt.innerText="reuslt"
-        }
-  
-   // Qustion.innerText=""  
+      if(index>4){ //fun index>4  return reuslt 
+          return reuslt.innerText="reuslt"
+         }
 
-    // Quiz.forEach((elem,i)=>{
-   
-       const p_1=document.createElement("p")
-       Qustion.append(p_1)
+        const p_Q=document.querySelector("p")
       
-       p_1.innerText=Quiz[index].Q
-    //  p_1.innerText=elem.Q
-    
-    // })
-    
-}
-// const Quiz_2=()=>{
-//     Quiz.forEach((elem,i)=>{
+       p_Q.innerText=Quiz[index].Q  
+
+       Quiz[index].answer.forEach((elem,i)=>{
+        const ans=document.createElement("button")
+        Answer.append(ans)
+
+        ans.innerText=elem
+
+    })
         
-//         p_1.innerText=Object.values(elem.Q2).join("")
-//     })
-// }
+}
 console.log(Quiz_1());
- const next=document.createElement("button")
+//creat button next 
+const next=document.createElement("button")
 body.append(next)
  next.innerText="next"
-
-
-
+ //use addEventListener function
 next.addEventListener("click",()=>{
-    
-    const p_1=document.querySelector("p")
-    p_1.innerText=""
+    const p_Q=document.querySelector("p")
+    const ans=document.querySelector("button")
+    p_Q.innerText=""
+    ans.innerText=""
+
        //Qustion.append(p_1)
+       
        index++;
-      
-      
-    Quiz_1()
+
+
+       Quiz_1()
+});
+
+//useing function answer
+// const answer_1=()=>{
+//     //use forech 
+  
+
+//   })
+   
     
-})
+// }
+//console.log(answer_1());
+
