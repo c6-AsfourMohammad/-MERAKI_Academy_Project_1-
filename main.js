@@ -30,6 +30,12 @@ const body=document.querySelector("body")
 //creat (div)for header
 const header=document.createElement("div")
  body.append(header)
+ //creat div end
+ const end=document.createElement("div")
+ body.append(end)
+ //creat dit timer
+ const timer=document.createElement("div")
+ body.append(timer)
 //creat (div)for Qustion 
 const Qustion=document.createElement("div")
 body.append(Qustion)
@@ -56,14 +62,16 @@ reuslt.append(res)
 const p_Q=document.createElement("p")
 Qustion.append(p_Q)
 
-const svg= document.createElementNS("http://www.w3.org/2000/svg", 'path');
+
 
 let index=0;//index =0 global value
 //creat name header web
 const nameQuiz=document.createElement("h1") 
  header.append(nameQuiz)
- nameQuiz.innerText="Kids Quiz"
+ nameQuiz.innerHTML=`<span style="color:red ">K</span><span style="color:rgb(89, 224, 241)">i</span><span style="color:rgb(255, 145, 0)">d</span><span style="color:rgb(128, 29, 173)">s</span>
+ <span style="color:rgb(236, 117, 211) ">Q</span> <span style="color:rgb(255, 145, 0) ">u</span> <span style="color:rgb(89, 224, 241) ">i</span> <span style="color:red ">z</span>`
 nameQuiz.className="nameQuiz"
+
 //creat button for header
 const headerButton=document.createElement("button")
 header.append(headerButton)
@@ -97,6 +105,7 @@ headerButton.className="Start"
             //to make a photo use fuction 
         if(Quiz[index].answer[i]===Quiz[index].Cor){
         ans.style.backgroundColor="green"; //use background color green if correct
+        ans.innerHTML=`<audio src="EWQFA9A-kids-game-win-awarded-01-positive-drum-cadence-bel.mp3">win</audio>`
         //.push in array Empty For every correct answer
         result_1.push(Quiz[index].Cor) 
         }else{
@@ -118,6 +127,7 @@ headerButton.className="Start"
          next.innerText="Next"
          next.style.boxShadow= "0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19)";
          next.className="next"
+         
          //use addEventListener function next button
         next.addEventListener("click",()=>{
             const p_Q=document.querySelector("p")
@@ -130,5 +140,16 @@ headerButton.className="Start"
         
         
    console.log(Quiz_1());
+  
  })
-//useing function 
+//useing button for play again rest game
+const playAgain=document.createElement("button")
+end.append(playAgain)
+playAgain.innerText="Play Again"
+playAgain.className="again"
+
+playAgain.addEventListener("click",()=>{
+    console.log(Quiz_1());
+   
+  })
+  

@@ -4,6 +4,7 @@ body{
 background-size: cover;
 }
 
+
 img{
    /* margin-left: 400px; */
     height: 120px;
@@ -50,11 +51,11 @@ color:  blueviolet;
 
 .next:hover{
     /* width: 90px; */
-    height: 50px;
+    height: 47px;
 color: whitesmoke;
     transition: width 2s; 
     background-color: rgb(206, 72, 112);
-    border-radius: 25px;
+    border-radius: 12px;
 } 
  
 .reuslt{
@@ -66,7 +67,7 @@ color: whitesmoke;
 
 .Start{
     margin-left: 680px;
-    margin-top: 60px;
+    margin-top: -40px; 
     font-size:80px;
    background-color: gold;
    color:red;
@@ -84,8 +85,15 @@ color: green;
     display: flex;
     margin-top: -335px;
   margin-left: 1055px;
- 
+ /* size: 100px; */
     border-radius: 12px;
+}
+.nameQuiz{
+    display: flex;
+    justify-content: center;
+    font-size: 120px;
+    font-family: cursive;
+    text-shadow: 10px 10px  8px hsl(0, 100%, 0%);
 }
 
 
