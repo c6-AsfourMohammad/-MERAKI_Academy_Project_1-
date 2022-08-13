@@ -27,6 +27,9 @@ Cor:"https://img.freepik.com/premium-vector/illustration-cute-giraffe-avatar_794
 const result_1=[]
 //querySelector("body") 
 const body=document.querySelector("body")
+//creat (div)for header
+const header=document.createElement("div")
+ body.append(header)
 //creat (div)for Qustion 
 const Qustion=document.createElement("div")
 body.append(Qustion)
@@ -55,77 +58,81 @@ Qustion.append(p_Q)
 
 const svg= document.createElementNS("http://www.w3.org/2000/svg", 'path');
 
-let index=0;
- //index =0 global value
-//useing function 
-const Quiz_1=()=>{
-if(index>4){ //fun index>4  return reuslt 
-    res.innerText=  "Result:"+result_1.length 
-  Qustion.append(res)
-}
-
-const p_Q=document.querySelector("p")
-      
-p_Q.innerText=Quiz[index].Q  
-//useing function answer
- Quiz[index].answer.forEach((elem,i)=>{ //foreach img 
-//creat button in div
- const ans=document.createElement("button")
- Answer.append(ans)
- ans.className="ans"
-//creat img in button 
-const img=document.createElement("img")
-ans.append(img)
-ans.className="imgbutton"
-//to link the picture use src
-img.src=elem
-img.innerText=elem
-//to make a photo button
-img.addEventListener("click",()=>{
-    //to make a photo use fuction 
-if(Quiz[index].answer[i]===Quiz[index].Cor){
-ans.style.backgroundColor="green"; //use background color green if correct
-//.push in array Empty For every correct answer
-result_1.push(Quiz[index].Cor) 
-}else{
-ans.style.backgroundColor="red"; //use background color green if worng
-}    
-})
-})
-}
- //creat button back
-
- const back=document.createElement("button")
- body.append(back)
-back.innerText="back"
- back.className="back"
- back.style.boxShadow= "0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19)";
- //use addEventListener function back button
-
- back.addEventListener("click",()=>{
-    
-    const p_Q=document.querySelector("p")
-    const ans=document.querySelector("button")
-    p_Q.innerText=""
-    Answer.innerText=""
-       index--;
-       Quiz_1()
-    
+let index=0;//index =0 global value
+//creat name header web
+const nameQuiz=document.createElement("h1") 
+ header.append(nameQuiz)
+ nameQuiz.innerText="Kids Quiz"
+nameQuiz.className="nameQuiz"
+//creat button for header
+const headerButton=document.createElement("button")
+header.append(headerButton)
+headerButton.innerText="Start"
+headerButton.className="Start"
+ headerButton.addEventListener("click",()=>{
+    const Quiz_1=()=>{
+        if(index>4){ //fun index>4  return reuslt 
+            res.innerText=  "Result:"+result_1.length 
+          Qustion.append(res)
+        }
+        
+        const p_Q=document.querySelector("p")
+              
+        p_Q.innerText=Quiz[index].Q  
+        //useing function answer
+         Quiz[index].answer.forEach((elem,i)=>{ //foreach img 
+        //creat button in div
+         const ans=document.createElement("button")
+         Answer.append(ans)
+         ans.className="ans"
+        //creat img in button 
+        const img=document.createElement("img")
+        ans.append(img)
+        ans.className="imgbutton"
+        //to link the picture use src
+        img.src=elem
+        img.innerText=elem
+        //to make a photo button
+        img.addEventListener("click",()=>{
+            //to make a photo use fuction 
+        if(Quiz[index].answer[i]===Quiz[index].Cor){
+        ans.style.backgroundColor="green"; //use background color green if correct
+        //.push in array Empty For every correct answer
+        result_1.push(Quiz[index].Cor) 
+        }else{
+        ans.style.backgroundColor="red"; //use background color green if worng
+        }    
+        })
+        })
+        }
+         //creat button back
+        
+         const back=document.createElement("button")
+         body.append(back)
+        back.innerText="back"
+         back.className="back"
+         back.style.boxShadow= "0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19)";
+         //use addEventListener function back button
+        
+         
+        //console.log(Quiz_1());
+        //creat button next 
+        const next=document.createElement("button")
+        body.append(next)
+         next.innerText="Next"
+         next.style.boxShadow= "0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19)";
+         next.className="next"
+         //use addEventListener function next button
+        next.addEventListener("click",()=>{
+            const p_Q=document.querySelector("p")
+            const ans=document.querySelector("button")
+            p_Q.innerText=""
+            Answer.innerText=""
+               index++;
+               Quiz_1()
+        });
+        
+        
+   console.log(Quiz_1());
  })
-console.log(Quiz_1());
-//creat button next 
-const next=document.createElement("button")
-body.append(next)
- next.innerText="Next"
- next.style.boxShadow= "0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19)";
- next.className="next"
- //use addEventListener function next button
-next.addEventListener("click",()=>{
-    const p_Q=document.querySelector("p")
-    const ans=document.querySelector("button")
-    p_Q.innerText=""
-    Answer.innerText=""
-       index++;
-       Quiz_1()
-});
-
+//useing function 
