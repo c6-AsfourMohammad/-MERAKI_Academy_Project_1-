@@ -17,6 +17,7 @@ img{
     margin-bottom: 60px;
     margin-top: 20px;
     gap: 35px;
+    border-radius: 12px;
     
 
 }
@@ -34,27 +35,26 @@ button{
     padding: 20px;
     width: 500px;
     height: 250;
-    margin-top: 200px;
+    margin-top: 120px;
     margin-left: 490px;
+   
     
 }
 .Answer:hover{
     /* width: 90px; */
-    height: 50px;
+    height: 150px;
 color:  blueviolet;
     transition: width 2s; 
+
 } 
-.back:hover{
-    /* width: 90px; */
-    height: 50px;
-color:  blueviolet;
-    transition: width 2s; 
-} 
+
 .next:hover{
     /* width: 90px; */
     height: 50px;
-color:  blueviolet;
+color: whitesmoke;
     transition: width 2s; 
+    background-color: rgb(206, 72, 112);
+    border-radius: 25px;
 } 
  
 .reuslt{
@@ -63,10 +63,29 @@ color:  blueviolet;
     /* margin-left: 400px; */
     margin-top: -10px;
 }
-.back{
-   
-    margin-left: 690px;
-    margin-right: 5px;
+
+.Start{
+    margin-left: 680px;
+    margin-top: 60px;
+    font-size:80px;
+   background-color: gold;
+   color:red;
+   border-radius: 12px;
+   border: 4px solid red;
+}
+.Start:hover{
+    /* width: 90px; */
+    height: 120px;
+color: green;
+    transition: width 2s; 
+    border: 4px solid green;
+} 
+.next{
+    display: flex;
+    margin-top: -335px;
+  margin-left: 1055px;
+ 
+    border-radius: 12px;
 }
 
 

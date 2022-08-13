@@ -67,7 +67,7 @@ nameQuiz.className="nameQuiz"
 //creat button for header
 const headerButton=document.createElement("button")
 header.append(headerButton)
-headerButton.innerText="Start"
+headerButton.innerText="Start "
 headerButton.className="Start"
  headerButton.addEventListener("click",()=>{
     const Quiz_1=()=>{
@@ -107,11 +107,7 @@ headerButton.className="Start"
         }
          //creat button back
         
-         const back=document.createElement("button")
-         body.append(back)
-        back.innerText="back"
-         back.className="back"
-         back.style.boxShadow= "0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19)";
+        
          //use addEventListener function back button
         
          
