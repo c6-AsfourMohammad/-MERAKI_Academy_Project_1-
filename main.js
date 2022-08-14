@@ -115,6 +115,12 @@ header.append(Flag)
 Flag.innerText="Flag"
 Flag.className="Flag"
 Animal.addEventListener("click",()=>{
+    body.innerText=""
+    body.append(Qustion)
+    body.append(Answer)
+    body.append(end)
+    
+
     const Quiz_1=()=>{
         if(index>4){ //fun index>4  return reuslt 
             res.innerText=  "Result:"+result_1.length 
@@ -154,7 +160,10 @@ Animal.addEventListener("click",()=>{
         const playAgain=document.createElement("button")
 end.append(playAgain)
 playAgain.innerText="Play Again"
-playAgain.className="again"       
+playAgain.className="again"  
+playAgain.addEventListener("click",()=>{
+    body.innerText=""
+      })     
          
         //console.log(Quiz_1());
         //creat button next 
@@ -182,9 +191,7 @@ playAgain.className="again"
  })
 
 
-//  playAgain.addEventListener("click",()=>{
-//     Quiz_1()
-//      })
+ 
 //useing button for play again rest game
 //============================================================================================================================//
 //============================================================================================================================//
@@ -192,6 +199,9 @@ playAgain.className="again"
 
 
 Flag.addEventListener("click",()=>{
+    body.innerText=""
+    body.append(Qustion)
+    body.append(Answer)
     const Quiz_2=()=>{
         if(index>4){ //fun index>4  return reuslt 
             res.innerText=  "Result:"+result_1.length 
