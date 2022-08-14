@@ -36,7 +36,7 @@ button{
     padding: 20px;
     width: 500px;
     height: 250;
-    margin-top: 120px;
+    margin-top: 80px;
     margin-left: 490px;
    
     
@@ -95,6 +95,23 @@ color: green;
     font-family: cursive;
     text-shadow: 10px 10px  8px hsl(0, 100%, 0%);
 }
+.again{
+    display: flex;
+    justify-content: center;
+    margin-left: 300px;
+    
+    border-radius: 12px;
+}
+.again:hover{
+    /* width: 90px; */
+    height: 47px;
+color: whitesmoke;
+    transition: width 2s; 
+    background-color: rgb(206, 72, 112);
+    border-radius: 12px;
+} 
+
+
 
 
 
