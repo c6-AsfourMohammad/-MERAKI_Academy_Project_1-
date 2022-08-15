@@ -57,6 +57,7 @@ const body=document.querySelector("body")
 //creat (div)for header
 const header=document.createElement("div")
  body.append(header)
+ 
  //creat div end
  const end=document.createElement("div")
  body.append(end)
@@ -65,7 +66,7 @@ const header=document.createElement("div")
  body.append(timer)
 //creat (div)for Qustion 
 const Qustion=document.createElement("div")
-body.append(Qustion)
+// body.append(Qustion)
 Qustion.className="Qustion"
 //creat (div)for Answer 
 const Answer=document.createElement("div")
@@ -77,7 +78,7 @@ body.append(Coreact)
 Coreact.className="Coreact"
 //creat div for reuslt
 const reuslt=document.createElement("div")
-body.append(reuslt)
+ body.append(reuslt)
 reuslt.className="reuslt"
 //creat res_butt  header name
  const res_butt=document.createElement("p")
@@ -103,6 +104,7 @@ headerButton.innerText="Start "
 headerButton.className="Start"
 
 const  Home=headerButton.addEventListener("click",()=>{
+   
 //creat more choise in the Qustion (animal / flag)
 //creat button animal 
 const Animal=document.createElement("button")
@@ -116,12 +118,17 @@ Flag.innerText="Flag"
 Flag.className="Flag"
 Animal.addEventListener("click",()=>{
     body.innerText=""
+    
     body.append(Qustion)
     body.append(Answer)
     body.append(end)
     
 
     const Quiz_1=()=>{
+        // Name=document.createElement("h1")
+        // body.append(Name)
+        // Name.innerText="Hi_Mohammad"
+        // Name.className="Name"
         if(index>4){ //fun index>4  return reuslt 
             res.innerText=  "Result:"+result_1.length 
           Qustion.append(res)
@@ -163,6 +170,8 @@ playAgain.innerText="Play Again"
 playAgain.className="again"  
 playAgain.addEventListener("click",()=>{
     body.innerText=""
+    
+    body.append(header)
       })     
          
         //console.log(Quiz_1());
@@ -202,7 +211,15 @@ Flag.addEventListener("click",()=>{
     body.innerText=""
     body.append(Qustion)
     body.append(Answer)
+    body.append(end)
+    
     const Quiz_2=()=>{
+        // Name.innerText=""
+        // Name=document.createElement("h1")
+        // body.append(Name)
+        // Name.innerText="Hi_Mohammad"
+        // Name.className="Name"
+
         if(index>4){ //fun index>4  return reuslt 
             res.innerText=  "Result:"+result_1.length 
           Qustion.append(res)
@@ -239,10 +256,14 @@ Flag.addEventListener("click",()=>{
         })
         } 
         const playAgain=document.createElement("button")
-end.append(playAgain)
-playAgain.innerText="Play Again"
-playAgain.className="again"       
-         
+        end.append(playAgain)
+        playAgain.innerText="Play Again"
+        playAgain.className="again"  
+        playAgain.addEventListener("click",()=>{
+            body.innerText=""
+            
+            body.append(header)
+              })     
         //console.log(Quiz_1());
         //creat button next 
         const next=document.createElement("button")
